@@ -12,8 +12,36 @@
     tools:context="com.example.a437.gun_paradise.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:layout_width="400dp"
+            android:layout_height="150dp"
+            android:text="Settings"
+            android:id="@+id/buttonSettings"
+            android:layout_below="@+id/buttonStart"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:text="Start game"
+            android:id="@+id/buttonStart"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:layout_width="400dp"
+            android:layout_height="100dp"
+            android:text="About"
+            android:id="@+id/buttonAbout"
+            android:layout_below="@+id/buttonSettings"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
 </RelativeLayout>
