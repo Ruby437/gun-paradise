@@ -15,7 +15,7 @@ public class GUnitPrice {
     }
     public GUnitPrice(GUnit u){
         switch(u.getUnitID()){
-            case 1: basePrice = constants.noob_sPrice;
+            case 1: basePrice = Constants.noob_sPrice;
                 break;
             default: basePrice = 2147483647;
 
