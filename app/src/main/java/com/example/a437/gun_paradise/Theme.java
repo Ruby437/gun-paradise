@@ -1,4 +1,4 @@
-package com.example.a437.gun_paradise.themes;
+package com.example.a437.gun_paradise;
 
 /**
  * Created by 437 on 17-Jun-16.

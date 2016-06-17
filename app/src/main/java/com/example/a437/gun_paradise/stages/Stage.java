@@ -1,7 +1,7 @@
 package com.example.a437.gun_paradise.stages;
 
 import com.example.a437.gun_paradise.Sprite;
-import com.example.a437.gun_paradise.themes.*;
+import com.example.a437.gun_paradise.Theme;
 
 /**
  * Created by 437 on 17-Jun-16.
@@ -9,4 +9,5 @@ import com.example.a437.gun_paradise.themes.*;
 public class Stage {
     Sprite sprite;
     Theme theme;
+
 }
