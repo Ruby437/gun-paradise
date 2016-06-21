@@ -28,7 +28,8 @@
             android:layout_width="fill_parent"
             android:layout_alignParentTop="true"
             android:layout_height="0dp"
-            app:layout_heightPercent="50%"/>
+            app:layout_heightPercent="50%"
+            android:onClick="startGame"/>
         <Button
             android:id="@+id/action_settings"
             android:text="@string/settings"

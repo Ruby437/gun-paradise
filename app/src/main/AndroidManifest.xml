@@ -22,14 +22,19 @@
             android:name=".Battlefield"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_battlefield"
-            android:theme="@style/FullscreenTheme">
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".codeView.Main2Activity"></activity>
+        <activity android:name=".codeView.Main2Activity" />
+        <activity
+            android:name=".Combat"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_combat"
+            android:theme="@style/FullscreenTheme"></activity>
     </application>
 
 </manifest>

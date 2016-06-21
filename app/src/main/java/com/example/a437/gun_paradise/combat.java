@@ -12,7 +12,7 @@ import android.view.View;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class Battlefield extends AppCompatActivity {
+public class Combat extends AppCompatActivity {
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -86,8 +86,10 @@ public class Battlefield extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        events = new EventHandler (0);
-        setContentView(R.layout.activity_battlefield);
+Bundle bundle = getIntent().getExtras();
+      //todo get EventHandler working
+        //  EventHandler events = new EventHandler(bundle.getParcelable("EventHandler"));
+        setContentView(R.layout.activity_combat);
 
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
@@ -98,7 +100,7 @@ public class Battlefield extends AppCompatActivity {
         mContentView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //events.tap(1);
+         //todo        events.tap();
             }
         });
 
@@ -117,7 +119,19 @@ public class Battlefield extends AppCompatActivity {
         // are available.
         delayedHide(100);
     }
-
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        System.out.println(1);
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);}
+    }
     private void toggle() {
         if (mVisible) {
             hide();

@@ -10,10 +10,12 @@ import android.view.MenuItem;
 import android.view.Window;
 
 public class MainActivity extends AppCompatActivity {
-
+    EventHandler events;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        events = new EventHandler(0);
         setContentView(R.layout.activity_main);
        // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
        // setSupportActionBar(toolbar);
@@ -42,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
     {
         /* @todo check tutorial, if false ask for name
         ask for name */
-        Intent intent = new Intent(MainActivity.this, Battlefield.class);
+        Intent intent = new Intent(MainActivity.this, Combat.class);
+        intent.putExtra("eventHandler", events);
         startActivity(intent);
     }
 }
