@@ -12,4 +12,7 @@
 
         <string name="title_activity_combat">combat</string>
     <string name="dummy_button">Dummy Button</string>
+    <string name="enemies_units_and_all_that_stuff_goes_here">Enemies, Units and all that stuff goes here</string>
+    <string name="taps">Taps:</string>
+    <string name="tapsCount">0</string>
 </resources>

@@ -33,6 +33,7 @@ public class EventHandler implements Parcelable{
        for (int i = count; i>0;i--){
            tap();
            //todo statistics
+
        };
     }
     public void tap () {this.taps++;}

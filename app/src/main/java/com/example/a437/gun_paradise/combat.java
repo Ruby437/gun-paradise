@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -14,6 +15,7 @@ import android.view.View;
  */
 public class Combat extends AppCompatActivity {
     EventHandler events;
+    TextView t;
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -91,7 +93,10 @@ public class Combat extends AppCompatActivity {
       //todo get EventHandler working
         events = new EventHandler(bundle.getParcelable("EventHandler").describeContents());
         setContentView(R.layout.activity_combat);
+        t=new TextView(this);
 
+        t=(TextView)findViewById(R.id.textView2);
+        t.setText("0");
         mVisible = true;
         mContentView = findViewById(R.id.fullscreen_content);
 
@@ -101,6 +106,7 @@ public class Combat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
               events.tap(1);
+              t.setText(events.getTaps());
             }
         });
 
