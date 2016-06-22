@@ -30,9 +30,12 @@ public class EventHandler implements Parcelable{
     }
 
     public void tap (int count) {
-        this.taps = taps + count;
+       for (int i = count; i>0;i--){
+           tap();
+           //todo statistics
+       };
     }
-
+    public void tap () {this.taps++;}
 
     public EventHandler(int taps) {
         this.taps = taps;
@@ -40,7 +43,7 @@ public class EventHandler implements Parcelable{
 
     @Override
     public int describeContents() {
-        return 0;
+        return getTaps();
     }
 
     @Override
