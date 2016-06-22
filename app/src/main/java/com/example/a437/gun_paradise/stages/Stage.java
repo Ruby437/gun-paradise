@@ -1,5 +1,4 @@
 package com.example.a437.gun_paradise.stages;
-
 import com.example.a437.gun_paradise.Sprite;
 import com.example.a437.gun_paradise.Theme;
 
