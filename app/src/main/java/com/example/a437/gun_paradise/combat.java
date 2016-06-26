@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.widget.TextView;
 
 /**
@@ -89,6 +90,7 @@ public class Combat extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         Bundle bundle = getIntent().getExtras();
       //todo get EventHandler working
         events = new EventHandler(bundle.getParcelable("EventHandler").describeContents());
@@ -106,7 +108,7 @@ public class Combat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
               events.tap(1);
-              t.setText(events.getTaps());
+              t.setText(Integer.toString(events.getTaps()));
             }
         });
 
