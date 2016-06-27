@@ -3,8 +3,11 @@ package com.example.a437.gun_paradise;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.example.a437.gun_paradise.enemies.*;
+
 /**
  * Created by 437 on 21-Jun-16.
+ * EventHandler to do all actions during application runtime.
  */
 public class EventHandler implements Parcelable{
     int taps;
@@ -12,7 +15,12 @@ public class EventHandler implements Parcelable{
     protected EventHandler(Parcel in) {
         taps = in.readInt();
     }
-
+public Enemy generateEnemy(Enemytype enType, double enIncrement){
+    switch (enType) {
+        case Target: return new Target(enIncrement, Math.ceil(1*(2+enIncrement)), Math.ceil(1*(1+enIncrement))); //no armor, no shield
+        default: return new Target (0.0,1.0,1.0);
+    }
+}
     public static final Creator<EventHandler> CREATOR = new Creator<EventHandler>() {
         @Override
         public EventHandler createFromParcel(Parcel in) {
@@ -34,7 +42,7 @@ public class EventHandler implements Parcelable{
            tap();
            //todo statistics
 
-       };
+       }
     }
     public void tap () {this.taps++;}
 
